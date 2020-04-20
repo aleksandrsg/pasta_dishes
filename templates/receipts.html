@@ -1,15 +1,11 @@
-<html>
-    <head>
-
-    </head>
-    <body>
-        {% for receipt in receipts %}
-            {{receipt.receipt_name}}
-            {{receipt.serves}}
-            {{receipt.prep}}
-            {{receipt.cook_time}}
-            {{receipt.ingredients}}
-            {{receipt.description}}
-        {% endfor %}
-    </body>
-</html>
+{% extends 'parent.html' %}
+{% block content %}
+    {% for receipt in receipts %}
+        {{receipt.receipt_name}}
+        {{receipt.serves}}
+        {{receipt.prep}}
+        {{receipt.cook_time}}
+        {{receipt.ingredients}}
+        {{receipt.description}}
+    {% endfor %}
+{% endblock %}
