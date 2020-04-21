@@ -2,27 +2,31 @@
 {% block title %} Receipts {% endblock %}
 
 {% block content %} 
-<h1>Main Page</h1>
-    <div class="row container">
+<div class="container">
+<h1>Only Pasta_Receipts</h1>
+ <div class="row">
     {% for receipt in receipts %}
-        <div class="col">
-            <div class="card medium">
-                <div class="card-image card-image-size">
-                    <img class="image-description" alt="Some food" src="https://smittenkitchendotcom.files.wordpress.com/2007/02/baked-tomato-sauce.jpg?w=640">
-                    <span class="card-title"> {{receipt.receipt_name}} </span>
-                </div>
-                <div class="card-content">
-                <p>{{receipt.description}}</p>
-                </div>
-                <div class="card-action">
-                <a class="red-color" href="">View</a>
+        
+       
+            <div class="col s12 l4">
+                <div class="card">
+                    <div class="card-image">
+                    <img src="{{receipt.img_link}}" alt="receipt_image">
+                    <a href="#" class="halfway-fab btn-floating pink pulse"><i class="material-icons">favorite</i></a>
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title">{{receipt.receipt_name}}</span>
+                    <p>{{receipt.description}}</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#"> View </a>
+                    <a href="#"> Full receipt</a>
+                    </div>
                 </div>
             </div>
-        </div>
     {% endfor %}
-    </div>
-
-
+     </div>
+</div>
 {% endblock %}
 
 {{receipt.receipt_name}}
@@ -31,3 +35,4 @@
 {{receipt.cook_time}}
 {{receipt.ingredients}}
 {{receipt.description}}
+{{receipt.img_link}}
