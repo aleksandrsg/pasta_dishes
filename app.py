@@ -15,6 +15,9 @@ mongo = PyMongo(app)
 def get_receipts():
     return render_template("receipts.html", receipts=mongo.db.receipts.find())
 
+@app.route('/add_receipt')
+def add_receipt():
+    return render_template("addreceipt.html", receipts=mongo.db.receipts.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
