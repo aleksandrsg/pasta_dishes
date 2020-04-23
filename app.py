@@ -25,7 +25,7 @@ def add_receipt():
 
 @app.route('/insert_receipt', methods=['POST'])
 def insert_receipt():
-    receipts = mongo.db.tasks
+    receipts = mongo.db.receipts
     receipts.insert_one(request.form.to_dict())
     return redirect (url_for('get_receipts'))
 
