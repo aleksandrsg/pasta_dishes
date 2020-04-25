@@ -1,0 +1,50 @@
+{% extends 'parent.html' %} 
+{% block content %} 
+<h1> Edit receipt</h1>
+<div class="row">
+    <form action="{{url_for('insert_receipt')}}" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s12 l12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" value="{{receipt.receipt_name}}">
+          <label for="icon_prefix">Receipt Title</label>
+        </div>
+        <div class="input-field col s12 l4">
+          <i class="material-icons prefix">people</i>
+          <input id="icon_telephone" type="tel" class="validate" value="{{receipt.serves}}">
+          <label for="icon_telephone">Serves</label>
+        </div>
+        <div class="input-field col s12 l4">
+          <i class="material-icons prefix">schedule</i>
+          <input id="icon_telephone" type="tel" class="validate" value="{{receipt.prep}}">
+          <label for="icon_telephone">Prep. min.</label>
+        </div>
+        <div class="input-field col s12 l4">
+          <i class="material-icons prefix">schedule</i>
+          <input id="icon_telephone" type="tel" class="validate" value="{{receipt.cook_time}}">
+          <label for="icon_telephone">Cook min.</label>
+        </div>
+        <div class="input-field col s12 l12">
+          <i class="material-icons prefix">shopping_basket</i>
+          <input id="icon_telephone" type="tel" class="validate" value="{{receipt.ingredients}}">
+          <label for="icon_telephone">Ingredients</label>
+        </div>
+        <div class="input-field col s12 l12">
+          <i class="material-icons prefix">book</i>
+          <input id="icon_telephone" type="tel" class="validate" value="{{receipt.description}}">
+          <label for="icon_telephone">Receipt Description</label>
+        </div>
+        <div class="input-field col s12 l12">
+          <i class="material-icons prefix">image_search</i>
+          <input id="icon_telephone" type="tel" class="validate" value="{{receipt.img_link}}">
+          <label for="icon_telephone">Image Link</label>
+        </div>
+      </div>
+      <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Receipt
+            <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+  </div>
+{% endblock %}
