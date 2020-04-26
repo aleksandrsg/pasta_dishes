@@ -20,7 +20,9 @@ def get_receipts():
 
 @app.route('/add_receipt')
 def add_receipt():
-    return render_template("addreceipt.html", receipts=mongo.db.receipts.find())
+    return render_template("addreceipt.html", 
+                            receipts=mongo.db.receipts.find(),
+                            categories=mongo.db.categories.find())
 
 
 @app.route('/insert_receipt', methods=['POST'])

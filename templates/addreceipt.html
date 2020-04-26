@@ -1,8 +1,19 @@
 {% extends 'parent.html' %} 
 {% block content %} 
 <h1> Add receipt</h1>
-<div class="row">
     <form action="{{url_for('insert_receipt')}}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12 l4">
+            <i class="material-icons prefix">poll</i>
+                <select id="category" name="category_name">
+                    <option value="" disabled selected>Choose receipt category</option>
+                    {% for cat in categories %}
+                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+  </div>
       <div class="row">
         <div class="input-field col s12 l12">
           <i class="material-icons prefix">account_circle</i>
