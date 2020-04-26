@@ -19,8 +19,7 @@
                     <p>{{receipt.description}}</p>
                     </div>
                     <div class="card-action">
-                    <a href="#"> View </a>
-                    <a href="#"> Full receipt</a>
+                    <a href="{{ url_for('receipt_description', receipt_id = receipt._id)}}"> Full receipt</a>
                     </div>
                 </div>
             </div>

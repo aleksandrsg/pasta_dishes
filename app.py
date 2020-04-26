@@ -31,11 +31,13 @@ def insert_receipt():
     receipts.insert_one(request.form.to_dict())
     return redirect (url_for('get_receipts'))
 
+
 @app.route('/edit_receipt/<receipt_id>')
 def edit_receipt(receipt_id):
     the_receipt =  mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
     all_categories =  mongo.db.categories.find()
     return render_template('editreceipt.html', receipt=the_receipt)
+
 
 @app.route('/update_receipt/<receipt_id>', methods=["POST"])
 def update_receipt(receipt_id):
@@ -49,6 +51,11 @@ def update_receipt(receipt_id):
         'ingredients':request.form.get('ingredients')
     })
     return redirect(url_for('get_tasks'))
+
+@app.route("/receipt/<receipt_id>")
+def receipt_description(receipt_id):
+    one_receipt = mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
+    return render_template("description.html", receipt=one_receipt)
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
