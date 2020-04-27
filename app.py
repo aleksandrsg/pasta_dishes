@@ -56,6 +56,22 @@ def update_receipt(receipt_id):
 def receipt_description(receipt_id):
     one_receipt = mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
     return render_template("description.html", receipt=one_receipt)
+
+#----- Section for Receipts Categories -----
+
+@app.route("/get_categories")
+def get_categories():
+    return render_template("categories.html", type=mongo.db.categories.find())
+
+@app.route("/insert_category", methods=["POST"])
+def insert_category():
+    categories = mongo.db.categories
+    categories.insert_one(request.form.to_dict())
+    return redirect(url_for("get_categories"))
+
+@app.route("/add_category")
+def add_category():
+    return render_template("addcategory.html")
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -1,0 +1,17 @@
+{% extends 'parent.html' %} 
+{% block content %} 
+<h1> All Categories</h1>
+
+
+    <!-- Add category button -->
+
+    <div class="row">
+        <div class="col">
+            <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn">
+                <i class="material-icons right">playlist_add</i>Add Category
+            </a>
+        </div>
+    </div>
+
+
+{% endblock %}

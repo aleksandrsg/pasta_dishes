@@ -15,7 +15,7 @@
         <li><a href="{{url_for('get_receipts')}}">Main Page</a></li>
         <li><a href="#">Search</a></li>
         <li><a href="{{url_for('add_receipt')}}">Add Receipt</a></li>
-        <li><a href="#">Add Category</a></li>
+        <li><a href="{{url_for('get_categories')}}">Categories</a></li>
       </ul>
     </div>
   </nav>
@@ -26,6 +26,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function() {
+            $('.collapsible').collapsible();
             $('select').material_select();
         });
 </script>
