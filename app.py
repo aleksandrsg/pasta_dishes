@@ -57,6 +57,13 @@ def receipt_description(receipt_id):
     one_receipt = mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
     return render_template("description.html", receipt=one_receipt)
 
+@app.route("/delete_receipt/<receipt_id>")
+def delete_receipt(receipt_id):
+    receipt= mongo.db.receipts
+    receipt.delete_one({"_id": ObjectId(receipt_id)})
+    return redirect(url_for("get_receipts"))
+
+
 #----- Section for Receipts Categories -----
 
 @app.route("/get_categories")

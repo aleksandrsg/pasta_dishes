@@ -47,5 +47,14 @@
           <label for="icon_telephone">Receipt Description</label>
         </div>
       </div>
+
+        <div class="row">
+            <a class="btn waves-effect waves-light" href="#">Edit Receipt
+            <i class="material-icons right">note</i></a>
+            <a class="btn waves-effect waves-light grey" href="{{url_for('delete_receipt', receipt_id = receipt._id)}}">Delete Receipt
+            <i class="material-icons right">delete</i></a>
+            <a class="btn waves-effect waves-light red" href="{{url_for('get_receipts')}}">
+            <i class="material-icons left">close</i>Cancel</a>
+        </div>
 </div>
 {% endblock %}
