@@ -1,9 +1,23 @@
 {% extends 'parent.html' %} 
 {% block content %} 
+<div class="container">
+
 <h1> All Categories</h1>
 
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for cat in categories %}
+        <li>
+            <div class="collapsible-header">
+                <div class="col s11">
+                    <a class="waves-effect waves-light btn btn_small red darken-1" href="#">Delete</a>
+                    <strong>{{ cat.category_name }}</strong>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
-    <!-- Add category button -->
+    <!-- Category button -->
 
     <div class="row">
         <div class="col">
@@ -13,5 +27,5 @@
         </div>
     </div>
 
-
+</div>
 {% endblock %}
