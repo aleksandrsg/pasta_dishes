@@ -42,15 +42,17 @@ def edit_receipt(receipt_id):
 @app.route('/update_receipt/<receipt_id>', methods=["POST"])
 def update_receipt(receipt_id):
     receipts = mongo.db.receipts
-    receipts.update( {'_id': ObjectId(receipt_id)},
+    receipts.update({'_id': ObjectId(receipt_id)},
     {
         'receipt_name':request.form.get('receipt_name'),
         'serves':request.form.get('serves'),
         'prep': request.form.get('prep'),
         'cook_time': request.form.get('cook_time'),
-        'ingredients':request.form.get('ingredients')
+        'ingredients':request.form.get('ingredients'),
+        'description':request.form.get('description'),
+        'img_link':request.form.get('img_link'),
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_receipts'))
 
 @app.route("/receipt/<receipt_id>")
 def receipt_description(receipt_id):
@@ -86,6 +88,11 @@ def delete_category(category_id):
 @app.route("/add_category")
 def add_category():
     return render_template("addcategory.html")
+
+#----- Search Functionality -----
+
+
+
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
