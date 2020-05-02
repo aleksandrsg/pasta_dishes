@@ -9,7 +9,7 @@
         <li>
             <div class="collapsible-header">
                 <div class="col s11">
-                    <a class="waves-effect waves-light btn btn_small red darken-1" href="#">Delete</a>
+                    <a class="waves-effect waves-light btn btn_small darken-1 red" href="{{url_for('delete_category', category_id = cat._id)}}">Delete</a>
                     <strong>{{ cat.category_name }}</strong>
                 </div>
             </div>

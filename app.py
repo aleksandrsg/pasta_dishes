@@ -76,6 +76,13 @@ def insert_category():
     categories.insert_one(request.form.to_dict())
     return redirect(url_for("get_categories"))
 
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    category= mongo.db.categories
+    category.delete_one({"_id": ObjectId(category_id)})
+    return redirect(url_for("get_categories"))
+
+
 @app.route("/add_category")
 def add_category():
     return render_template("addcategory.html")
