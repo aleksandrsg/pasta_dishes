@@ -18,35 +18,38 @@
                 <img class="image-description" src="{{receipt.img_link}}" alt="{{receipt.receipt_name}}">
                 {% endif %}
             </div>
-    </div>
+    </div> 
+        <div class="row">
+        <div class="col s3">
+            <p><strong>Category:</strong>{{receipt.category_name}} </p>
+        </div>
+         <div class="col s3">
+            <p><strong> Serves:</strong>{{ receipt.serves }}</p>
+        </div>
+        <div class="col s3">
+            <p><strong>Preparetion time:</strong> {{receipt.prep}} </p>
+        </div>
+        <div class="col s3">
+            <p><strong>Cooking time:</strong> {{receipt.cook_time }}</p>
+        </div>
+        </div>
 
-    <div class="row">
-        <div class="input-field col s12 l4">
-          <i class="material-icons prefix">people</i>
-          <input id="serves" name="serves" type="text" class="validate" value="{{receipt.serves}}">
-          <label for="icon_telephone">Serves</label>
-        </div>
-        <div class="input-field col s12 l4">
-          <i class="material-icons prefix">schedule</i>
-          <input id="prep" name="prep" type="text" class="validate" value="{{receipt.prep}}">
-          <label for="icon_telephone">Prep. min.</label>
-        </div>
-        <div class="input-field col s12 l4">
-          <i class="material-icons prefix">schedule</i>
-          <input id="cook_time" name="cook_time" type="text" class="validate" value="{{receipt.cook_time}}">
-          <label for="icon_telephone">Cook min.</label>
-        </div>
-        <div class="input-field col s12 l12">
-          <i class="material-icons prefix">shopping_basket</i>
-          <input id="ingredients" name="ingredients" type="text" class="validate" value="{{receipt.ingredients}}">
-          <label for="icon_telephone">Ingredients</label>
-        </div>
-        <div class="input-field col s12 l12">
-          <i class="material-icons prefix">book</i>
-          <input id="description" name="description" type="text" value="{{receipt.description}}">
-          <label for="icon_telephone">Receipt Description</label>
-        </div>
-      </div>
+         <div class="row">
+            <div class="col s12">
+            <h6><strong>Ingredients:</strong></h6>  
+            <p> {{receipt.ingredients}}</p>
+            </div>
+         </div>
+
+          <div class="row">
+            <div class="col s12"> 
+            <h6><strong>Description:</strong></h6>  
+            <p> {{receipt.description}}</p>
+            </div>
+         </div>
+        
+
+
 
         <div class="row">
             <a class="btn waves-effect waves-light" href="{{url_for('edit_receipt', receipt_id = receipt._id)}}">Edit Receipt
