@@ -8,26 +8,35 @@
 </head>
 <body>
 <header>
-<nav>
-    <div class="nav-wrapper">
-      <a href="{{url_for('get_receipts')}}" class="brand-logo">Pasta Receipts</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{{url_for('get_receipts')}}">Main Page</a></li>
-        <li><a href="{{url_for('add_receipt')}}">Add Receipt</a></li>
-        <li><a href="{{url_for('get_categories')}}">Categories</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav class="nav-wrapper indigo">
+            <div class="container">
+              <a href="#" class="brand-logo" id="menu-logo">Pastas</a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('get_receipts')}}">Main</a></li>
+                <li><a href="{{url_for('add_receipt')}}">Add receipt</a></li>
+                <li><a href="{{url_for('get_categories')}}">Categories</a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="{{url_for('get_receipts')}}">Main</a></li>
+                <li><a href="{{url_for('add_receipt')}}">Add receipt</a></li>
+                <li><a href="{{url_for('get_categories')}}">Categories</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
   </header>
         {% block content %}
         {% endblock %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script type="text/javascript">
-        $(document).ready(function() {
+<script >
+        $(document).ready(function(){
             $('.collapsible').collapsible();
             $('select').material_select();
-        });
+            $('.button-collapse').sideNav();
+  });
 </script>
 </script>
 </body>
