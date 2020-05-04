@@ -5,8 +5,6 @@
 <div class="container">
  <div class="row">
     {% for receipt in receipts %}
-        
-       
             <div class="col s12 l4">
                 <div class="card">
                     <div class="card-image">
@@ -15,7 +13,6 @@
                     </div>
                     <div class="card-content">
                     <span class="card-title">{{receipt.receipt_name}}</span>
-                    <p>{{receipt.description}}</p>
                     </div>
                     <div class="card-action">
                     <a href="{{ url_for('receipt_description', receipt_id = receipt._id)}}"> Full receipt</a>
@@ -26,11 +23,3 @@
      </div>
 </div>
 {% endblock %}
-
-{{receipt.receipt_name}}
-{{receipt.serves}} 
-{{receipt.prep}} 
-{{receipt.cook_time}}
-{{receipt.ingredients}}
-{{receipt.description}}
-{{receipt.img_link}}
