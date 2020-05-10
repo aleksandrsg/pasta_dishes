@@ -36,12 +36,12 @@ def insert_receipt():
 def edit_receipt(receipt_id):
     the_receipt =  mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
     all_categories =  mongo.db.categories.find()
-    return render_template('editreceipt.html', receipt=the_receipt)
-
+    return render_template('editreceipt.html', receipt=the_receipt, categories=all_categories)
 
 @app.route('/update_receipt/<receipt_id>', methods=["POST"])
 def update_receipt(receipt_id):
     receipts = mongo.db.receipts
+    the_receipt=mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
     receipts.update({'_id': ObjectId(receipt_id)},
     {
         'receipt_name':request.form.get('receipt_name'),
@@ -51,6 +51,7 @@ def update_receipt(receipt_id):
         'ingredients':request.form.get('ingredients'),
         'description':request.form.get('description'),
         'img_link':request.form.get('img_link'),
+        'category_name': request.form.get('category_name'),
     })
     return redirect(url_for('get_receipts'))
 

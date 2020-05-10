@@ -3,6 +3,18 @@
 <h1> Update receipt</h1>
 <div class="row">
     <form action="{{url_for('update_receipt', receipt_id = receipt._id)}}" method="POST" class="col s12">
+    <div class="input-field col s12 l4">
+            <i class="material-icons prefix">poll</i>
+                <select class="form-control" id="category" name="category_name">
+                    {% for cat in categories %}
+                    {% if cat.category_name == receipt.category_name %}
+                    <option value="{{ cat.category_name }}" selected >{{cat.category_name}}</option>
+                    {% else  %}
+                    <option>{{cat.category_name}}</option>
+                    {%endif%}
+                    {% endfor %}
+                </select>
+            </div>
       <div class="row">
         <div class="input-field col s12 l12">
           <i class="material-icons prefix">account_circle</i>
