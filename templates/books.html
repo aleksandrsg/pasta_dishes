@@ -1,0 +1,29 @@
+{% extends 'parent.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+    {% for book in books %}
+            <div class="col s12 l4">
+                <div class="card l3">
+                    <div class="card-image">
+                    <img src="{{book.image}}" alt="book_image">
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title">{{book.name}}</span>
+                    </div>
+                    <div class="card-action">
+                    <p><b>Author:</b> {{book.author}}</p>
+                    <p><b>Cover:</b> {{book.cover}}</p>
+                    <p><b>Language:</b> {{book.language}}</p>
+                    <p><b>Pages:</b> {{book.pages}}</p>
+                    <p><b>Publisher:</b> {{book.publisher}}</p>
+                    <p class="price"> <b>Price: </b>{{book.price}}</p>
+                    <p><button>Add to Cart</button></p>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

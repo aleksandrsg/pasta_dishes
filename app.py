@@ -90,9 +90,13 @@ def delete_category(category_id):
 def add_category():
     return render_template("addcategory.html")
 
-#----- Search Functionality -----
+#----- Buy Receipt Books about Pasta -----
 
+@app.route('/get_books')
+def get_books():
+    return render_template("books.html", books=mongo.db.books.find())
 
+#----- Buy Receipt Books about Pasta -----
 
     
 if __name__ == '__main__':
