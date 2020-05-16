@@ -1,6 +1,6 @@
 {% extends 'parent.html' %} 
 {% block content %} 
-<h1> Update receipt</h1>
+<h1> Update recipe</h1>
 <div class="row">
     <form action="{{url_for('update_receipt', receipt_id = receipt._id)}}" method="POST" class="col s12">
     <div class="input-field col s12 l4">
@@ -19,7 +19,7 @@
         <div class="input-field col s12 l12">
           <i class="material-icons prefix">account_circle</i>
           <input id="receipt_name" name="receipt_name" type="text" class="validate" value="{{receipt.receipt_name}}" required>
-          <label for="icon_prefix">Receipt Title</label>
+          <label for="icon_prefix">Recipe Title</label>
         </div>
         <div class="input-field col s12 l4">
           <i class="material-icons prefix">people</i>

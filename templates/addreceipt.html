@@ -1,13 +1,13 @@
 {% extends 'parent.html' %} 
 {% block content %}
 <div class="container">
-<h1> Add receipt</h1>
+<h1> Add recipe</h1>
     <form action="{{url_for('insert_receipt')}}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12 l4">
             <i class="material-icons prefix">poll</i>
                 <select id="category" name="category_name">
-                    <option value="" disabled selected>Choose receipt category</option>
+                    <option value="" disabled selected>Choose recipe category</option>
                     {% for cat in categories %}
                     <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                     {% endfor %}
@@ -18,7 +18,7 @@
         <div class="input-field col s12 l12">
           <i class="material-icons prefix">account_circle</i>
           <input id="receipt_name" name="receipt_name" type="text" class="validate" required>
-          <label for="icon_prefix">Receipt Title</label>
+          <label for="icon_prefix">Recipe Title</label>
         </div>
         <div class="input-field col s12 l4">
           <i class="material-icons prefix">people</i>
@@ -43,7 +43,7 @@
         <div class="input-field col s12 l12">
           <i class="material-icons prefix">book</i>
           <input id="description" name="description" type="text" class="validate" required>
-          <label for="icon_telephone">Receipt Description</label>
+          <label for="icon_telephone">Recipe Description</label>
         </div>
         <div class="input-field col s12 l12">
           <i class="material-icons prefix">image_search</i>
