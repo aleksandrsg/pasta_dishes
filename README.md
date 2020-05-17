@@ -83,5 +83,39 @@ def edit_receipt(receipt_id):
 
 3. App did not opened in Heroku. The problem was solved by updating requirements.txt file.
 
-### Credits
+### Database
 ---
+Data stored in MongoDB Atlas cloud.
+
+For the Project purposes was created DB: pasta_dishes.
+
+DB consists from three collections inside it (categories, receipts, books).
+
+Collection Categories has the following structure:
+
+* _id:ObjectId("1234567890")
+* category_name: "ABC".
+
+Collection Books has the following structure:
+
+* _id:ObjectId("1234567890")
+* name: " "
+* cover: " "
+* language:" "
+* author: " "
+* publisher: " "
+* pages: " "
+* image: " "
+* price: " "
+
+Collection Receipts has the following structure:
+
+* _id:ObjectId("1234567890")
+* receipt_name: " "
+* serves: " "
+* prep:" "
+* cook_time: " "
+* ingredients: " "
+* description: " "
+* img_link: " "
+* category_name: " "
