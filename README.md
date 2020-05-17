@@ -14,6 +14,22 @@ This Project was created and developed in GitPod IDE.
 
 Stored in GitHub repository https://github.com/aleksandrsg/receipts and Heroku https://pasta-dishes.herokuapp.com/
 
+1. To deploy Project have to make registration on www.heroku.com
+2. Press button NEW on the top right corner
+3. Choose function: Create New App
+4. Type App name: pasta-dishes
+5. Choose a region : Europe
+6. Push button CREATE APP 
+7. Go back to GitPod IDE and make connection with Heroku
+8. Type in terminal: $ heroku login -i 
+9. Type in terminal: $ heroku git:remote -a pasta-dishes
+10. Type in terminal: $ git add .
+11. Type in terminal: $ git commit -m "Any your comment"
+12. Type in terminal: $ git push heroku master
+13. Go back to Heroku, choose pasta-dishes on the left side 
+14. Press button OPEN APP on the top right coner
+15. App works.
+
 ### UX
 ---
 Project wireframe you could find in directory Static / Wireframe. 
@@ -34,14 +50,14 @@ To create wireframes I used free online resource https://wireframe.cc/.
 ---
 To develop Project the author use the following basic web technologies:
 
-HTML,
-CSS,
-Materializecss framework,
-Flask framework,
-PyMongo,
-MongoDB,
-jQuery,
-Jinja.
+* HTML,
+* CSS,
+* Materializecss framework,
+* Flask framework,
+* PyMongo,
+* MongoDB,
+* jQuery,
+* Jinja.
 
 ### Testing
 ---
