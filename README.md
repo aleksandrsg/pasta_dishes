@@ -69,16 +69,21 @@ During the app developing and testing was the following main issues:
 Recipe Document had only _id:ObjectId('') other data was missing (receipt_name, serves, prep, cook_time, ingredients,
 description, img_link, category_name). 
 The problem was solved by adding to each INPUT tag following attributes "ID" and "NAME".
-<input id="receipt_name" name="receipt_name" type="text" class="validate" required>
+
+input id="receipt_name" name="receipt_name" type="text" class="validate" required
 
 2. While testing Edit Recipe functionality recipe category data did not flow to Form from MongoDB.
 The category field was empty. The problem was found and solved by adding in file APP.PY,
 the following code "categories=all_categories" :
 
 @app.route('/edit_receipt/<receipt_id>')
+
 def edit_receipt(receipt_id):
+
     the_receipt =  mongo.db.receipts.find_one({"_id": ObjectId(receipt_id)})
+
     all_categories =  mongo.db.categories.find()
+
     return render_template('editreceipt.html', receipt=the_receipt, categories=all_categories)
 
 3. App did not opened in Heroku. The problem was solved by updating requirements.txt file.
