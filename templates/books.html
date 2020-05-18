@@ -4,6 +4,7 @@
 <div class="container">
     {% for book in books %}
             <div class="row">
+            <!--- Image for book-->
             <div class="col s4 l4">
                 <div class="card">
                     <div class="card-image">
@@ -12,6 +13,7 @@
                 </div>
             </div>
             <div class="col s8 l8">
+            <!--- Book description-->
                     <div class="card-content">
                     <span class="card-title"><h5>{{book.name}}</h5></span>
                     <p><b>Author:</b> {{book.author}}</p>

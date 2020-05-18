@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize css -->
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Custom css -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>Parent template</title>
 </head>
 <body>
 <header>
+<!--- Navigation-->
 <nav class="nav-wrapper indigo">
             <div class="container">
               <a href="{{url_for('get_receipts')}}" class="brand-logo" id="menu-logo">Pastas</a>
@@ -28,8 +32,11 @@
     </header>
         {% block content %}
         {% endblock %}
+<!-- jQuery connection  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Connection with Materialize Javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- Connection with custom JS -->
 <script src="{{url_for('static', filename='js/script.js')}}">
 </script>
 </body>
