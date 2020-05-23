@@ -2,13 +2,13 @@
 
 {% block content %} 
 <div id="description_page" class="container">
-    <!--- Recipe Title --->
+    <!--- Recipe Title -->
     <div class="row">
         <div class="col s12 center-align">
             <h3>{{ receipt.receipt_name }}</h3>
         </div>
     </div>
-    <!--- Recipe Image --->
+    <!--- Recipe Image -->
     <div class="row">
             <div class="col s12 center-align">
                 {% if receipt.img_link == "" %}
@@ -19,38 +19,38 @@
             </div>
     </div> 
         <div class="row">
-        <!--- Recipe Category --->
+        <!--- Recipe Category -->
         <div class="col s3">
             <p><strong>Category:</strong>{{receipt.category_name}} </p>
         </div>
-        <!--- Serves --->
+        <!--- Serves -->
          <div class="col s3">
             <p><strong> Serves:</strong>{{ receipt.serves }}</p>
         </div>
-        <!--- Time for preparetion --->
+        <!--- Time for preparetion -->
         <div class="col s3">
             <p><strong>Preparetion time:</strong> {{receipt.prep}} </p>
         </div>
-        <!--- Cooking time --->
+        <!--- Cooking time -->
         <div class="col s3">
             <p><strong>Cooking time:</strong> {{receipt.cook_time }}</p>
         </div>
         </div>
-        <!--- Ingredients for recipe--->
+        <!--- Ingredients for recipe-->
          <div class="row">
             <div class="col s12">
             <h6><strong>Ingredients:</strong></h6>  
             <p> {{receipt.ingredients}}</p>
             </div>
          </div>
-        <!--- Recipe description --->
+        <!--- Recipe description -->
           <div class="row">
             <div class="col s12"> 
             <h6><strong>Description:</strong></h6>  
             <p> {{receipt.description}}</p>
             </div>
          </div>
-        <!--- Buttons --->
+        <!--- Buttons -->
         <div class="row">
             <a class="btn waves-effect waves-light" href="{{url_for('edit_receipt', receipt_id = receipt._id)}}">Edit Recipe
             <i class="material-icons right">note</i></a>
