@@ -9,7 +9,11 @@
             <div class="col s12 l4">
                 <div class="card">
                     <div class="card-image">
+                    {% if receipt.img_link == "" %}
+                    <img class="image-description" alt="Some food" src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/spaghetti-puttanesca_1.jpg">
+                     {% else %}
                     <img src="{{receipt.img_link}}" alt="receipt_image">
+                    {% endif %}
                     <a href="#" class="halfway-fab btn-floating pink pulse"><i class="material-icons">favorite</i></a>
                     </div>
                     <div class="card-content">
